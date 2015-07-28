@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Labsampid</Data></Cell>
+        <Cell><Data ss:Type="String">Labcode</Data></Cell>
+        <Cell><Data ss:Type="String">Sampid</Data></Cell>
+        <Cell><Data ss:Type="String">Projname</Data></Cell>
+        <Cell><Data ss:Type="String">Receivedate</Data></Cell>
+        <Cell><Data ss:Type="String">Sampdate</Data></Cell>
+        <Cell><Data ss:Type="String">Prepdate</Data></Cell>
+        <Cell><Data ss:Type="String">Matrix</Data></Cell>
+        <Cell><Data ss:Type="String">Testcode</Data></Cell>
+        <Cell><Data ss:Type="String">Testno</Data></Cell>
+        <Cell><Data ss:Type="String">Batchid</Data></Cell>
+        <Cell><Data ss:Type="String">Analdate</Data></Cell>
+        <Cell><Data ss:Type="String">Analyte</Data></Cell>
+        <Cell><Data ss:Type="String">Cas</Data></Cell>
+        <Cell><Data ss:Type="String">Analytetype</Data></Cell>
+        <Cell><Data ss:Type="String">Samptype</Data></Cell>
+        <Cell><Data ss:Type="String">Finalvalue</Data></Cell>
+        <Cell><Data ss:Type="String">Dilfac</Data></Cell>
+        <Cell><Data ss:Type="String">Pql</Data></Cell>
+        <Cell><Data ss:Type="String">Rec</Data></Cell>
+        <Cell><Data ss:Type="String">Spike</Data></Cell>
+        <Cell><Data ss:Type="String">Rpd</Data></Cell>
+        <Cell><Data ss:Type="String">Lowercl</Data></Cell>
+        <Cell><Data ss:Type="String">Uppercl</Data></Cell>
+        <Cell><Data ss:Type="String">Units</Data></Cell>
+        <Cell><Data ss:Type="String">Flag</Data></Cell>
+      </Row>
+    <% @products.each do |product| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= product.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.labsampid%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.labcode%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.sampid%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.projname%></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.sampdate %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.receivedate%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.prepdate%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.matrix%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.testcode%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.testno%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.batchid%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.analdate%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.analyte%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.cas%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.analytetype%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.samptype%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.finalvalue%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.dilfac%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.pql%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.rec%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.spike%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.rpd%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.lowercl%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.uppercl%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.units%></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= product.flag%></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

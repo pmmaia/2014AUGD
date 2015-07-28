@@ -1,0 +1,69 @@
+<h1>Lab Reports</h1>
+
+<table id="products">
+  <tr>
+    <th>LABSAMPID</th>
+    <th>LABCODE</th>
+    <th>SAMPID</th>
+    <th>PROJNAME</th>
+    <th>SAMPDATE</th>
+    <th>RECEIVEDATE</th>
+    <th>PREPDATE</th>
+    <th>MATRIX</th>
+    <th>TESTCODE</th>
+    <th>TESTNO</th>
+    <th>BATCHID</th>
+    <th>ANALDATE</th>
+    <th>ANALYTE</th>
+    <th>CAS</th>
+    <th>ANALYTETYPE</th>
+    <th>SAMPTYPE</th>
+    <th>FINALVALUE</th>
+    <th>DILFAC</th>
+    <th>PQL</th>
+    <th>REC</th>
+    <th>SPIKE</th>
+    <th>RPD</th>
+    <th>LOWERCL</th>
+    <th>UPPERCL</th>
+    <th>UNITS</th>
+    <th>FLAG</th>
+  </tr>
+<% @products.each do |product| %>
+  <tr>
+    <td nowrap><%= product.labsampid%></td nowrap>
+    <td nowrap><%= product.labcode%></td nowrap>
+    <td nowrap><%= product.sampid%></td nowrap>
+    <td nowrap><%= product.projname%></td nowrap>
+    <td nowrap><%= product.receivedate%></td nowrap>
+    <td nowrap><%= product.sampdate %></td nowrap>
+    <td nowrap><%= product.prepdate%></td nowrap>
+    <td nowrap><%= product.matrix%></td nowrap>
+    <td nowrap><%= product.testcode%></td nowrap>
+    <td nowrap><%= product.testno%></td nowrap>
+    <td nowrap><%= product.batchid%></td nowrap>
+    <td nowrap><%= product.analdate%></td nowrap>
+    <td nowrap><%= product.analyte%></td nowrap>
+    <td nowrap><%= product.cas%></td nowrap>
+    <td nowrap><%= product.analytetype%></td nowrap>
+    <td nowrap><%= product.samptype%></td nowrap>
+    <td nowrap><%= product.finalvalue%></td nowrap>
+    <td nowrap><%= product.dilfac%></td nowrap>
+    <td nowrap><%= product.pql%></td nowrap>
+    <td nowrap><%= product.rec%></td nowrap>
+    <td nowrap><%= product.spike%></td nowrap>
+    <td nowrap><%= product.rpd%></td nowrap>
+    <td nowrap><%= product.lowercl%></td nowrap>
+    <td nowrap><%= product.uppercl%></td nowrap>
+    <td nowrap><%= product.units%></td nowrap>
+    <td nowrap><%= product.flag%></td nowrap>
+  </tr>
+<% end %>
+</table>
+
+<h2>Import Report</h2>
+
+<%= form_tag import_products_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
